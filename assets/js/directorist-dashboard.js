@@ -81,76 +81,33 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/src/js/public/main.js":
-/*!**************************************!*\
-  !*** ./assets/src/js/public/main.js ***!
-  \**************************************/
+/***/ "./assets/src/js/public/modules/dashboard.js":
+/*!***************************************************!*\
+  !*** ./assets/src/js/public/modules/dashboard.js ***!
+  \***************************************************/
 /*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scss_layout_public_main_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../scss/layout/public/main-style.scss */ "./assets/src/scss/layout/public/main-style.scss");
-/* harmony import */ var _scss_layout_public_main_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_layout_public_main_style_scss__WEBPACK_IMPORTED_MODULE_0__);
-/*
-    File: Main.js
-    Plugin: Directorist – Business Directory & Classified Listings WordPress Plugin
-    Author: wpWax
-    Author URI: www.wpwax.com
-*/
-// Styles
- // Single Listing Page
-// import './components/single-listing-page/slider';
-// General Components
-// import './components/general';
-// import './components/helpers';
-// import './components/review';
-// import './components/directoristSorting';
-// import './components/directoristAlert';
-// import './components/pureScriptTab';
-// import './components/profileForm';
-// import './components/gridResponsive';
-// import './components/formValidation';
-// import './components/directoristFavorite';
-// import './components/login';
-// import './components/tab';
-// import './components/directoristDropdown';
-// import './components/directoristSelect';
-// import './components/categoryLocation';
-// import './components/legacy-support';
-// import './components/author';
-// Booking
-// import './components/booking';
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\aazzt\\OneDrive\\Documents\\Local\\directorist\\app\\public\\wp-content\\plugins\\directorist\\assets\\src\\js\\public\\modules\\dashboard.js'");
 
 /***/ }),
 
-/***/ "./assets/src/scss/layout/public/main-style.scss":
-/*!*******************************************************!*\
-  !*** ./assets/src/scss/layout/public/main-style.scss ***!
-  \*******************************************************/
+/***/ 6:
+/*!*********************************************************!*\
+  !*** multi ./assets/src/js/public/modules/dashboard.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!********************************************!*\
-  !*** multi ./assets/src/js/public/main.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./assets/src/js/public/main.js */"./assets/src/js/public/main.js");
+module.exports = __webpack_require__(/*! ./assets/src/js/public/modules/dashboard.js */"./assets/src/js/public/modules/dashboard.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=public-main.js.map
+//# sourceMappingURL=directorist-dashboard.js.map
