@@ -5808,7 +5808,7 @@ if (!function_exists('atbdp_get_paged_num')) {
         } else if (get_query_var('page')) {
             $paged = get_query_var('page');
         } else {
-            $paged = 1;
+            $paged = isset( $_REQUEST['paged'] ) ? $_REQUEST['paged'] : 1;
         }
 
         return absint($paged);
@@ -6434,10 +6434,10 @@ function atbdp_get_listings_current_order($default_order = '')
 
     $order = $default_order;
 
-    if (isset($_GET['sort'])) {
-        $order = sanitize_text_field($_GET['sort']);
-    } else if (isset($_GET['order'])) {
-        $order = sanitize_text_field($_GET['order']);
+    if (isset($_REQUEST['sort'])) {
+        $order = sanitize_text_field($_REQUEST['sort']);
+    } else if (isset($_REQUEST['order'])) {
+        $order = sanitize_text_field($_REQUEST['order']);
     }
 
     return apply_filters('atbdp_get_listings_current_order', $order);
@@ -6525,8 +6525,8 @@ function atbdp_get_listings_current_view_name($view)
 {
 
 
-    if (isset($_GET['view'])) {
-        $view = sanitize_text_field($_GET['view']);
+    if (isset($_REQUEST['view'])) {
+        $view = sanitize_text_field($_REQUEST['view']);
     }
 
     $allowed_views = array('list', 'grid', 'map');
@@ -7319,13 +7319,6 @@ function atbdp_can_overwrite_yoast()
 
 function atbdp_disable_overwrite_yoast() {
     atbdp_can_overwrite_yoast();
-}
-
-if ( ! function_exists( 'directorist_is_active_rankmath' ) ) {
-    function directorist_is_active_rankmath() {
-
-        return class_exists( 'RankMath' );
-    }
 }
 
 
@@ -8374,6 +8367,31 @@ function directorist_get_directory_type_nav_url( $type = 'all', $base_url = null
 	$url = add_query_arg( [ 'directory_type' => $type ], $base_url );
 
 	return apply_filters( 'directorist_get_directory_type_nav_url', $url, $type, $base_url );
+}
+
+/**
+ * Directorist add query args with no pagination
+ *
+ * @since 7.1.3
+ *
+ * @param string $query_args Query Args
+ * @param string|null|mixed $base_url Base url for type url.
+ *
+ * @return string Final URL
+ */
+function directorist_add_query_args_with_no_pagination( $query_args = [], $base_url = null ) {
+	
+    if ( empty( $base_url ) ) {
+		$base_url = $_SERVER['REQUEST_URI'];
+	}
+
+    $base_url = remove_query_arg( [ 'page', 'paged' ], $base_url );
+    $base_url = preg_replace( '~/page/(\d+)/?~', '', $base_url );
+    $base_url = preg_replace( '~/paged/(\d+)/?~', '', $base_url );
+
+	$url = add_query_arg( $query_args, $base_url );
+
+	return apply_filters( 'directorist_add_query_args_with_no_pagination', $url, $query_args, $base_url );
 }
 
 if ( ! function_exists( 'directorist_is_plugin_active' ) ) {

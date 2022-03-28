@@ -465,6 +465,9 @@ p.status:empty {
 .select2-container--default .select2-search--dropdown .select2-search__field:focus {
   outline: 0;
 }
+.select2-container--default .select2-results__option {
+  margin: 0;
+}
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
   margin-left: 0;
@@ -3326,7 +3329,7 @@ body.stop-scrolling {
           justify-content: center;
 }
 
-.ez-media-uploader {
+#_listing_gallery {
   text-align: center;
 }
 
@@ -4344,7 +4347,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 
 #map {
-  width: 100%;
+  width: 800px;
   height: 600px;
   border: 1px solid #ccc;
 }
@@ -4973,7 +4976,7 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
 }
 
 /* wp color picker */
-.wp-picker-container .button {
+.directorist-form-group .wp-picker-container .button {
   position: relative;
   height: 40px;
   border: 0 none;
@@ -4982,10 +4985,10 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
   transition: 0.3s ease;
   border-radius: 3px;
 }
-.wp-picker-container .button:hover {
+.directorist-form-group .wp-picker-container .button:hover {
   background: rgba(0, 0, 0, 0.7);
 }
-.wp-picker-container .button .wp-color-result-text {
+.directorist-form-group .wp-picker-container .button .wp-color-result-text {
   position: absolute;
   right: 0;
   top: 50%;
@@ -5010,39 +5013,37 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
   background: #f7f7f7;
   color: #222;
 }
-.wp-picker-container .wp-picker-input-wrap label {
+.directorist-form-group .wp-picker-container .wp-picker-input-wrap label {
   width: 90px;
 }
-.wp-picker-container .wp-picker-input-wrap label input {
+.directorist-form-group .wp-picker-container .wp-picker-input-wrap label input {
   height: 40px;
   padding: 0;
   text-align: center;
 }
-.wp-picker-container .hidden {
+.directorist-form-group .wp-picker-container .hidden {
   display: none;
 }
-
-.wp-picker-open + .wp-picker-input-wrap {
+.directorist-form-group .wp-picker-open + .wp-picker-input-wrap {
   display: block;
 }
-
-.wp-picker-container .wp-picker-input-wrap {
+.directorist-form-group .wp-picker-container .wp-picker-input-wrap {
   padding: 15px 0;
 }
-.wp-picker-container .wp-picker-input-wrap .screen-reader-text {
+.directorist-form-group .wp-picker-container .wp-picker-input-wrap .screen-reader-text {
   display: none;
 }
-.wp-picker-container .wp-picker-input-wrap label {
+.directorist-form-group .wp-picker-container .wp-picker-input-wrap label {
   width: 90px;
   margin: 0;
 }
-.wp-picker-container .wp-picker-input-wrap label + .button {
+.directorist-form-group .wp-picker-container .wp-picker-input-wrap label + .button {
   margin-left: 10px;
   padding-top: 0;
   padding-bottom: 0;
   font-size: 15px;
 }
-.wp-picker-container .wp-picker-input-wrap label input {
+.directorist-form-group .wp-picker-container .wp-picker-input-wrap label input {
   width: 200px;
 }
 
@@ -5058,7 +5059,7 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
   margin-bottom: 0;
 }
 
-.atbdp-range-slider-widget .directorist-range-slider-current-value {
+.atbdp-range-slider-widget .atbd-current-value {
   margin-bottom: 10px;
 }
 
@@ -6194,7 +6195,7 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
   padding: 0 15px;
   font-size: 15px;
 }
-.directorist-sidebar .atbd_widget .default-ad-search .directorist-range-slider1 {
+.directorist-sidebar .atbd_widget .default-ad-search .atbd-slide1 {
   width: 1em;
   height: 1em;
 }
@@ -6595,7 +6596,7 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
   padding: 0 15px;
 }
 
-.directorist-range-slider-wrap .directorist-range-slider-current-value {
+.directorist-range-slider-wrap .atbd-current-value {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -6612,7 +6613,7 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
   padding: 0;
 }
 
-.directorist-range-slider-wrap.atbdprs-widget .directorist-range-slider-current-value {
+.directorist-range-slider-wrap.atbdprs-widget .atbd-current-value {
   margin-bottom: 15px !important;
   padding: 0 !important;
 }
@@ -6635,7 +6636,7 @@ body.atbd_content_active #directorist.atbd_wrapper .plasmaSliderIcon.psi-angle-l
   margin-bottom: 5px;
 }
 
-.directorist-range-slider1 {
+.atbd-slide1 {
   width: 1.2em;
   height: 1.2em;
   position: absolute;
@@ -6676,7 +6677,7 @@ p.atbd-min {
   float: left;
 }
 
-.directorist-range-slider-child {
+.atbd-child {
   height: 4px;
   border-radius: 2px;
   background: #444752;
@@ -10087,6 +10088,10 @@ p.atbd-min {
   right: 17px;
   top: 20px;
 }
+.directorist-listing-single .directorist-listing-single__info--list__label {
+  display: inline-block;
+  margin-right: 5px;
+}
 .directorist-listing-single .directorist-listing-single__meta {
   border-top: 1px solid #EFF1F6;
   padding: 12px 20px;
@@ -11759,8 +11764,7 @@ p.atbd-min {
   font-family: "Font Awesome 5 Brands";
 }
 
-.directorist-google-map,
-.directorist-single-map {
+.directorist-google-map {
   height: 400px;
 }
 
@@ -12439,9 +12443,9 @@ Review: New Style
 }
 .directorist-review-content .directorist-review-content__reviews .directorist-review-single__comments .directorist-review-single--comment {
   padding-left: 40px;
-  /* &:last-child {
-      padding-bottom: 0;
-  } */
+}
+.directorist-review-content .directorist-review-content__reviews .directorist-review-single__comments .directorist-review-single--comment:last-child {
+  padding-bottom: 0;
 }
 .directorist-review-content .directorist-review-content__reviews .directorist-review-single__comments .directorist-review-single--comment .directorist-review-single__contents-wrap {
   position: relative;
@@ -13052,7 +13056,7 @@ Review: New Style
   font-weight: 500;
   padding: 20px 0;
   text-decoration: none;
-  color: #0A0B1E;
+  color: #0a0b1e;
   position: relative;
 }
 .directorist-user-dashboard-tab ul li a:after {
@@ -13065,7 +13069,7 @@ Review: New Style
   opacity: 0;
   visibility: hidden;
   content: "";
-  background-color: #0A0B1E;
+  background-color: #0a0b1e;
 }
 .directorist-user-dashboard-tab ul li a.directorist-tab__nav__active:after {
   opacity: 1;
@@ -13093,11 +13097,11 @@ Review: New Style
   border-radius: 18px;
   font-size: 14px;
   font-weight: 400;
-  color: #8F8E9F;
+  color: #8f8e9f;
   padding: 10px 18px 10px 40px;
   min-width: 260px;
   height: 36px;
-  background-color: #F6F7F9;
+  background-color: #f6f7f9;
   margin-bottom: 0;
 }
 .directorist-user-dashboard-tab .directorist-user-dashboard-search input:focus {
@@ -13208,11 +13212,17 @@ Review: New Style
   -webkit-transform: translateY(-15px);
           transform: translateY(-15px);
 }
+.directorist-user-dashboard-tabcontent .directorist-listing-table tr:first-child .directorist-dropdown .directorist-dropdown-menu {
+  bottom: auto;
+  top: 35px;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
 .directorist-user-dashboard-tabcontent .directorist-listing-table tr td,
 .directorist-user-dashboard-tabcontent .directorist-listing-table tr th {
   font-size: 14px;
   font-weight: 400;
-  color: #51526E;
+  color: #51526e;
   padding: 12.5px 22px;
   border: 0 none;
 }
@@ -13220,9 +13230,9 @@ Review: New Style
   letter-spacing: 1.1px;
   font-size: 12px;
   font-weight: 500;
-  color: #8F8E9F;
+  color: #8f8e9f;
   text-transform: uppercase;
-  border-bottom: 1px solid #EFF1F6;
+  border-bottom: 1px solid #eff1f6;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-listing-table-listing-info {
   display: -webkit-box;
@@ -13252,7 +13262,7 @@ Review: New Style
   font-weight: 500;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-listing-table-listing-info__content .directorist-title a {
-  color: #0A0B1E;
+  color: #0a0b1e;
   -webkit-box-shadow: none;
           box-shadow: none;
   text-decoration: none;
@@ -13263,7 +13273,7 @@ Review: New Style
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-listing-table-listing-info__content .directorist-price {
   font-size: 14px;
   font-weight: 500;
-  color: #51526E;
+  color: #51526e;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist_badge {
   font-size: 12px;
@@ -13276,11 +13286,11 @@ Review: New Style
   background-color: rgba(68, 71, 82, 0.15);
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist_badge.directorist_status_published {
-  color: #218A00;
+  color: #218a00;
   background-color: rgba(33, 138, 0, 0.15);
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist_badge.directorist_status_pending {
-  color: #DC7600;
+  color: #dc7600;
   background-color: rgba(220, 118, 0, 0.15);
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist_badge.danger {
@@ -13310,7 +13320,7 @@ Review: New Style
   text-decoration: none;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-actions a.directorist-link-btn {
-  color: #2C99FF;
+  color: #2c99ff;
   font-weight: 500;
   margin-right: 20px;
 }
@@ -13347,7 +13357,7 @@ Review: New Style
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
-  color: #51526E;
+  color: #51526e;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown {
   position: relative;
@@ -13356,12 +13366,12 @@ Review: New Style
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown .directorist-dropdown-menu {
   position: absolute;
   right: 0;
-  top: 40px;
+  top: 35px;
   opacity: 0;
   visibility: hidden;
   background-color: #fff;
-  -webkit-box-shadow: 0 5px 15px #8F8E9F20;
-          box-shadow: 0 5px 15px #8F8E9F20;
+  -webkit-box-shadow: 0 5px 15px #8f8e9f20;
+          box-shadow: 0 5px 15px #8f8e9f20;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown .directorist-dropdown-menu.active {
   opacity: 1;
@@ -13370,7 +13380,7 @@ Review: New Style
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown-menu {
   min-width: 230px;
-  border: 1px solid #EFF1F6;
+  border: 1px solid #eff1f6;
   padding: 0 0 10px 0;
   border-radius: 6px;
 }
@@ -13386,18 +13396,18 @@ Review: New Style
   bottom: 0;
   width: calc(100% - 40px);
   height: 1px;
-  background-color: #EFF1F6;
+  background-color: #eff1f6;
   content: "";
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown-menu .directorist-dropdown-menu__list .directorist-dropdown-item {
   padding: 10px 20px;
   font-size: 14px;
-  color: #51526E;
+  color: #51526e;
   display: block;
   text-decoration: none;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown-menu .directorist-dropdown-menu__list .directorist-dropdown-item:hover {
-  background-color: #F6F7F9;
+  background-color: #f6f7f9;
 }
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown-menu .directorist-dropdown-menu__list .directorist-dropdown-item:first-child {
   margin-top: 10px;
@@ -13415,7 +13425,7 @@ Review: New Style
 .directorist-user-dashboard-tabcontent .directorist-listing-table .directorist-dropdown-menu .directorist-dropdown-menu__list .directorist_custom-checkbox label {
   font-size: 14px;
   font-weight: 400;
-  color: #51526E;
+  color: #51526e;
 }
 .directorist-user-dashboard-tabcontent .directorist_dashboard_rating ul li:not(:last-child) {
   margin-right: 4px;
@@ -13456,7 +13466,7 @@ Review: New Style
           justify-content: flex-end;
   margin: 2px 22px 0 22px;
   padding: 30px 0 40px;
-  border-top: 1px solid #EFF1F6;
+  border-top: 1px solid #eff1f6;
 }
 .directorist-user-dashboard-tabcontent .directorist-dashboard-pagination .page-numbers {
   margin: 4px;
@@ -13478,7 +13488,7 @@ Review: New Style
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #E1E4EC;
+  border: 1px solid #e1e4ec;
   border-radius: 6px;
   background: #fff;
   -webkit-transition: 0.3s;
@@ -13493,12 +13503,12 @@ Review: New Style
 }
 .directorist-user-dashboard-tabcontent .directorist-dashboard-pagination .page-numbers.current {
   background-color: #fff !important;
-  color: #0A0B1E;
+  color: #0a0b1e;
   border: 0 none;
 }
 .directorist-user-dashboard-tabcontent .directorist-dashboard-pagination .page-numbers i.la,
 .directorist-user-dashboard-tabcontent .directorist-dashboard-pagination .page-numbers svg {
-  color: #0A0B1E;
+  color: #0a0b1e;
 }
 
 .directorist-user-dashboard__contents.directorist-tab-content-grid-fix .directorist-user-dashboard-tabcontent .directorist-listing-table tr th.directorist-table-listing {
@@ -13597,17 +13607,17 @@ Review: New Style
   text-align: center;
   position: relative;
   /* .directorist-become-author-modal__close {
-    width: 30px !important;
-    height: 30px !important;
-    background-color: #ddd;
-    border-radius: 50% !important;
-    display: inline-flex !important;
-    position: absolute;
-    right: -13px;
-    align-items: center;
-    justify-content: center;
-    top: -10px;
-  } */
+      width: 30px !important;
+      height: 30px !important;
+      background-color: #ddd;
+      border-radius: 50% !important;
+      display: inline-flex !important;
+      position: absolute;
+      right: -13px;
+      align-items: center;
+      justify-content: center;
+      top: -10px;
+    } */
 }
 .directorist-become-author-modal .directorist-become-author-modal__content p {
   display: -webkit-box;
@@ -13666,7 +13676,7 @@ Review: New Style
 }
 
 #directorist-become-author-success {
-  color: #388E3C !important;
+  color: #388e3c !important;
   margin-bottom: 15px !important;
 }
 
@@ -14967,6 +14977,29 @@ Review: New Style
 
   .atbd_post_draft {
     padding-bottom: 80px;
+  }
+
+  .atbdp-range-slider-wrapper {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .atbdp-range-slider-wrapper > span {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .atbdp-range-slider-wrapper > div {
+    padding-left: 0;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin: 10px 0;
+  }
+  .atbdp-range-slider-wrapper .atbd-current-value {
+    padding: 0 !important;
   }
 
   .ads-advanced .atbd_seach_fields_wrapper .single_search_field {
