@@ -966,7 +966,7 @@ return apply_filters( 'atbdp_form_preset_widgets', array(
 				'type'        => 'textarea',
                 'editor'      => 'wp_editor',
                 'editorID'    => 'wp_editor_terms_privacy',
-                'value'       => __( 'I agree to the %privacy_name% and %terms_name%', 'directorist' ),
+                'value'       => __( 'I agree to the <a href="%privacy_url%" target="_blank">Privacy Policy</a> and <a href="%terms_url%" target="_blank">Terms of Service</a>', 'directorist' ),
 			],
 			'required' => [
 				'type'  => 'toggle',
