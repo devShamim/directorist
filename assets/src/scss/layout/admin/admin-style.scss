@@ -2470,11 +2470,6 @@ span.atbdp-tick-cross {
 	}
 }
 
-.vp-wrap .vp-menus ul.vp-menu-level-2 > li a i.fa,
-.fa {
-	font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
-}
-
 // Listing Gallery
 .atbdb_content_module_contents {
 	.ez-media-uploader {
@@ -4254,11 +4249,16 @@ body.wp-admin {
 	margin-top: 20px;
 
 	.directorist_builder__title {
-		font-size: 19px;
-		line-height: 25px;
+		font-size: 26px;
+		line-height: 34px;
 		font-weight: 600;
 		margin: 0;
-		color: #000;
+		color: #2c3239;
+		.directorist_count {
+			color: #747c89;
+			font-weight: 500;
+			margin-left: 5px;
+		}
 	}
 }
 
@@ -4595,7 +4595,7 @@ body.wp-admin {
 			text-decoration: none;
 			padding: 0 16px;
 			height: 40px;
-			border: 1px solid #3e62f5;
+			border: none;
 			cursor: pointer;
 			box-sizing: border-box;
 
@@ -4616,6 +4616,7 @@ body.wp-admin {
 			&.directorist_link-block-primary-outline {
 				background-color: #ffffff;
 				color: #3e62f5;
+				box-shadow: 0 1px 0 0 rgba(27, 31, 35, 0.1);
 				&:hover {
 					color: #5a7aff;
 					border-color: #5a7aff;
@@ -4808,7 +4809,6 @@ body.wp-admin {
 						align-items: center;
 						color: #113997;
 						background: #d7e4ff;
-						font-family: "Helvetica Neue";
 						font-size: 14px;
 						font-weight: 500;
 						line-height: 24px;
@@ -5928,13 +5928,6 @@ img.atbdp-file-info {
 
 	.cptm-create-directory-modal__body {
 		padding-top: 36px;
-		.directorist_template_notice {
-			margin-top: 10px;
-			color: #f80718;
-			&.cptm-section-alert-success {
-				color: #28a800;
-			}
-		}
 	}
 
 	.cptm-create-directory-modal__title {
@@ -5996,9 +5989,6 @@ img.atbdp-file-info {
 				min-width: 40px;
 				border-radius: 50%;
 				background-color: #0b99ff;
-				&.create-template {
-					background-color: #ff5c16;
-				}
 				&.create-scratch {
 					background-color: #0b99ff;
 				}

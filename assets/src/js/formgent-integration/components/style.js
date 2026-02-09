@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const EnquiriesComponentStyle = styled.div`
 	.directorist-enquiries-header {
@@ -15,6 +15,7 @@ const EnquiriesComponentStyle = styled.div`
 	}
 	.directorist-enquires-stats {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		gap: 20px;
 	}
@@ -22,12 +23,20 @@ const EnquiriesComponentStyle = styled.div`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex: 1;
 		border-radius: 12px;
-		width: 25%;
 		background-color: #fff;
 		padding: 24px;
 		border: 1px solid #e5e7eb;
 		transition: 0.3s ease;
+		@media screen and (max-width: 992px) {
+			width: 100%;
+			flex: 1 1 calc(50% - 60px);
+		}
+		@media screen and (max-width: 575px) {
+			width: 100%;
+			flex: 1 1 100%;
+		}
 		&:hover {
 			box-shadow:
 				0 0 #0000,
@@ -108,12 +117,22 @@ const EnquiriesComponentStyle = styled.div`
 		border-radius: 12px;
 		border: 1px solid #e5e7eb;
 		margin-top: 30px;
+		.components-input-control__container {
+			background-color: #f0f0f0;
+		}
+		.components-input-control__backdrop {
+			border-color: transparent !important;
+		}
 		.dataviews-view-table {
+			border: none;
 			tbody {
 				td {
 					vertical-align: middle;
 				}
 			}
+		}
+		.dataviews-view-table__row {
+			white-space: nowrap;
 		}
 		.dataviews__view-actions {
 			border-bottom: 1px solid #e5e7eb;
@@ -126,6 +145,10 @@ const EnquiriesComponentStyle = styled.div`
 				font-weight: 500;
 				color: #1e1e1e;
 				margin: 0;
+				width: 350px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 		}
 		.dataviews-view-table__actions-column {
@@ -181,8 +204,41 @@ const EnquiriesComponentStyle = styled.div`
 			color: var(--directorist-color-info);
 		}
 	}
+	.dataviews-view-table {
+		tr {
+			th {
+				&:first-child {
+					padding-left: 25px;
+				}
+				&:last-child {
+					padding-right: 25px;
+				}
+			}
+			td {
+				&:first-child {
+					padding-left: 25px;
+					width: 400px;
+				}
+				&:last-child {
+					padding-right: 25px;
+				}
+			}
+		}
+	}
+	.dataviews__view-actions {
+		padding: 16px 25px;
+	}
 	.dataviews-view-table__actions-column {
 		padding: 30px 0;
+		width: auto;
+		border: none;
+	}
+	.dataviews-wrapper {
+		.components-h-stack {
+			.components-dropdown {
+				display: none;
+			}
+		}
 	}
 `;
 
@@ -327,6 +383,11 @@ const EnquiryDetailsModalStyle = styled.div`
 			opacity: 0.5;
 			pointer-events: none;
 		}
+		@media only screen and (max-width: 480px) {
+			span {
+				display: none;
+			}
+		}
 	}
 	.directorist-enquiry-modal-btn-delete {
 		margin-left: auto;
@@ -418,9 +479,75 @@ const EnquiryDetailsModalStyle = styled.div`
 			}
 			.formgent-file-upload-answer {
 				padding: 8px 0;
+				background-color: #fff;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+				box-sizing: border-box;
 				&:last-child {
 					border-bottom: 0 none;
 					padding-bottom: 0;
+				}
+			}
+			.formgent-file-upload-answer__info,
+			.formgent-file-upload-answer__action {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+			}
+			.formgent-file-upload-answer__media {
+				min-width: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img {
+					width: 40px;
+					height: 40px;
+					object-fit: cover;
+					border-radius: 8px;
+				}
+				video {
+					width: 40px;
+					height: 40px;
+					object-fit: cover;
+					border-radius: 8px;
+				}
+				svg {
+					width: 36px;
+					height: 36px;
+					path {
+						fill: var(--directorist-color-light-gray);
+					}
+				}
+			}
+			.formgent-file-upload-answer__file-name {
+				font-size: 13px;
+				max-width: 230px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				color: var(--directorist-color-light-gray);
+				margin-bottom: 4px;
+				@media only screen and (max-width: 380px) {
+					max-width: none;
+					word-break: break-all;
+				}
+			}
+			.formgent-file-upload-answer__file-size {
+				font-size: 12px;
+				color: var(--directorist-color-light-gray);
+			}
+			.formgent-file-upload-answer__download,
+			.formgent-file-upload-answer__view {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: 0.3s ease;
+				cursor: pointer;
+				svg {
+					width: 20px;
+					height: 20px;
+					transition: 0.3s ease;
 				}
 			}
 		}
@@ -474,4 +601,44 @@ const EnquiryDetailsModalStyle = styled.div`
 	}
 `;
 
-export { EnquiriesComponentStyle, EnquiryDetailsModalStyle };
+// Global style for custom close button in modal header
+const EnquiryModalGlobalStyle = createGlobalStyle`
+	.directorist-enquiry-modal .components-modal__header {
+		position: relative;
+		padding: 0 40px 0 0;
+	}
+	.directorist-enquiry-modal .components-modal__content {
+		margin-top: 0 !important;
+	}
+	.directorist-enquiry-modal-close {
+		position: absolute;
+		top: 40px;
+		right: 16px;
+		transform: translateY(-50%);
+		width: 32px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		padding: 0;
+		color: #1e1e1e;
+		transition: opacity 0.2s;
+		&:hover {
+			opacity: 0.7;
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: currentColor;
+		}
+	}
+`;
+
+export {
+	EnquiriesComponentStyle,
+	EnquiryDetailsModalStyle,
+	EnquiryModalGlobalStyle,
+};
